@@ -1,8 +1,11 @@
 import { Body, Controller, Get, Param, Put } from '@nestjs/common';
 import { FindStudentResponseDto } from 'src/student/dto/student.dto';
+import { StudentService } from 'src/student/student.service';
 
 @Controller('teacher/:teacherId/students')
 export class StudentTeacherController {
+  constructor() {}
+
   @Get()
   getTeachersStudents(
     @Param('teacherId') teacherId: string,
