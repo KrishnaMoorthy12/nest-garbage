@@ -1,12 +1,18 @@
-export class StudentModel {
-  id: string;
-  name: string;
-  teacher: string;
+import { uuid } from 'uuidv4';
+
+export class Student {
+  public id: string;
+  constructor(public name: string, public teacher: string) {
+    this.id = uuid();
+  }
 }
-export class StudentResponseDto extends StudentModel {}
+export class StudentResponseDto extends Student {}
 
-export class FindStudentResponseDto extends StudentModel {}
+export class FindStudentResponseDto extends Student {}
 
-export class CreateStudentDto extends StudentModel {}
+export class CreateStudentDto extends Student {}
 
-export class UpdateStudentDto extends StudentModel {}
+export class UpdateStudentDto {
+  name?: string;
+  teacher?: string;
+}

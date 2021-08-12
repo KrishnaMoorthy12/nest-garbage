@@ -21,7 +21,7 @@ export class StudentController {
   getStudentById(
     @Param('studentId') studentId: string,
   ): FindStudentResponseDto {
-    return `Student with id ${studentId}`;
+    return this.studentService.getStudent(studentId);
   }
 
   @Post()
@@ -34,6 +34,6 @@ export class StudentController {
     @Param('studentId') studentId: string,
     @Body() body: UpdateStudentDto,
   ): StudentResponseDto {
-    return `Update student with id ${studentId} & body: ${body}`;
+    return this.studentService.updateStudent({ id: studentId, ...body });
   }
 }
