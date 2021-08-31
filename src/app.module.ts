@@ -9,7 +9,7 @@ import { UserModule } from './user/user.module';
       type: 'mongodb',
       host: 'localhost',
       database: 'nest',
-      entities: [__dirname + '/**/*.entity{.ts,.js}'],
+      autoLoadEntities: true,
       synchronize: true,
     }),
   ],
